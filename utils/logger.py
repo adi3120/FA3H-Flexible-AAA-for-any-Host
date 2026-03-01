@@ -1,7 +1,6 @@
 import logging
-import os
 
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+from utils.config import LOG_LEVEL
 
 logging.basicConfig(
     level=LOG_LEVEL,
