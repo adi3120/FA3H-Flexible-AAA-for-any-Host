@@ -1,0 +1,22 @@
+# Application
+APP_ENV=lab
+APP_HOST=<http_server_self_ip>
+APP_PORT=<http_server_port>
+
+# Logging
+LOG_LEVEL=INFO
+
+# Database
+DB_HOST=<DB IP>
+DB_PORT=<DB Port>
+DB_USER=<DB USER>
+DB_PASSWORD=<DB USER PASSWORD>
+DB_NAME=<DB NAME>
+
+# HTTP Client Defaults (optional for future)
+REQUEST_TIMEOUT=5
+
+# RADIUS (future use)
+RADIUS_HOST=0.0.0.0
+RADIUS_PORT=1812
+RADIUS_SHARED_SECRET=supersecret
