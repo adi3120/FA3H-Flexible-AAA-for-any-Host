@@ -14,5 +14,5 @@ def login(username, password):
 
 
 if __name__ == "__main__":
-    result = login("testuser", "1234 5")
+    result = login("testuser", "1234")
     print(result)
