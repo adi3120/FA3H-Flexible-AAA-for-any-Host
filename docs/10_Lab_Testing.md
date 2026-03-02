@@ -649,6 +649,8 @@ DB_CONFIG = {
 }
 
 # --- HTTP ---
+AAA_HOST = os.getenv("AAA_HOST", "127.0.0.1")
+AAA_PORT = int(os.getenv("AAA_PORT", 8000))
 REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", 5))
 
 # --- RADIUS ---
@@ -732,12 +734,12 @@ from dotenv import load_dotenv
 import os
 import requests
 from utils.logger import get_logger
+from utils.config import AAA_HOST, AAA_PORT, REQUEST_TIMEOUT
 
-load_dotenv()
 
-SERVER_HOST = os.getenv("AAA_HOST", "127.0.0.1")
-SERVER_PORT = int(os.getenv("AAA_PORT", 8000))
-TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", 5))
+SERVER_HOST = AAA_HOST
+SERVER_PORT = AAA_PORT
+TIMEOUT = REQUEST_TIMEOUT
 
 logger = get_logger(__name__)
 
@@ -751,6 +753,10 @@ def login(username, password):
         timeout=TIMEOUT
     )
     return response.json()
+
+if __name__ == "__main__":
+    result = login("testuser", "1234")
+    print(result)
 ```
 
 Now client is environment-driven too.

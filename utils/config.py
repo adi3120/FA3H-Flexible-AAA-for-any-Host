@@ -25,6 +25,8 @@ DB_CONFIG = {
 }
 
 # --- HTTP ---
+AAA_HOST = os.getenv("AAA_HOST", "127.0.0.1")
+AAA_PORT = int(os.getenv("AAA_PORT", 8000))
 REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", 5))
 
 # --- RADIUS ---
